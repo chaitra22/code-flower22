@@ -1,0 +1,879 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>event management</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'>
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+<script type="text/javascript">
+ $(window).on('scroll',function(){
+ if($(window).scrollTop()){
+  $('nav').addClass('black');
+  }
+  else
+  {
+   $('nav').removeClass('black');
+  }
+  })
+ </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+body
+{
+background:#fff;
+margin:0;
+padding:0;
+font-family: 'Roboto Slab', serif;
+}
+
+nav
+{
+position:fixed;
+top:0;
+left:0;
+z-index:1;
+width:100%;
+height:100px;
+overflow:hidden;
+padding: 10px 100px;
+box-sizing:border-box;
+transition: .5s;
+}
+
+nav.black{
+background: rgba(0,0,0,.8);
+height:100px;
+padding:10px 50px;
+}
+ nav .logo
+{
+margin:0;
+padding:0;
+float:left;
+}
+
+ nav .logo img{
+height:90px;
+transition: .5s;
+}
+
+nav ul{
+float: right;
+margin:0;
+padding:0;
+display:flex;
+
+}
+
+nav ul li 
+{
+list-style:none;
+}
+nav ul li a
+{
+line-height:80px;
+color:#262626;
+padding:5px 20px;
+font-family: 'Roboto Slab', serif;
+text-decoration:none;
+text-transform:uppercase;
+transition: .5s;
+}
+
+nav.black ul li a
+{
+ color: #fff;
+line-height:60px;
+}
+
+nav ul li a.active,
+nav ul li a:hover
+{
+color:#fff;
+background:#f00;
+
+}
+
+.title{
+  
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-shadow: pink 1px 0 10px;;
+   
+}
+
+.title h1{
+   font-family: 'Roboto Slab', serif;
+  font-size: 50px;
+  font-color:#000;
+
+}
+
+section.sec1{
+width:100%;
+height:100vh;
+background: url('images/23.jpeg') no-repeat ;
+backrgound-size:cover;
+backgroun-position:center;
+-webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+section.content1 h1{
+margin:0;
+margin-top:10px;
+margin-left:20px;
+padding:0;
+font-size:2em;
+
+}
+
+section.content1 p{
+margin:5px 0 0;
+margin-left:20px;
+padding:0;
+font-size: 1.2em;
+
+}
+
+
+section.sec2{
+padding-top:80px;
+margin-top:90px;
+}
+
+h1.show1{
+margin-left:20px;
+padding-left:20px;
+font-size:2em;
+}
+
+h1.wrap1{
+margin-left:20px;
+padding-left:20px;
+font-size:2em;
+}
+
+section .maindiv{
+width:60%;
+height:400px;
+position:absolute;
+left:50%;
+top:180%;
+transform:translate(-50%,-50%);
+background-image: url('images/f1.jpeg');
+background-size: 100% 100%;
+box-shadow:1px 2px 10px 5px black;
+animation:slider 9s infinite linear;
+}
+
+@keyframes slider{
+0%{background-image:url('images/f1.jpeg');}
+25%{background-image:url('images/f2.jpeg');}
+50%{background-image:url('images/f3.jpeg');}
+75%{background-image:url('images/f4.jpeg');}
+100%{background-image:url('images/f5.jpeg');}
+}
+
+body{
+margin:0;
+padding:0;
+
+}
+
+.slant{
+position:absolute;
+top:300%;
+left:50%;
+transform:translate(-50%,-50%);
+height:400px;
+width:1200px;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+display:flex;
+}
+
+.slantcontent{
+width:50%;
+height:100%;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+box-sizing: border-box;
+padding:30px 50px;
+font-family: 'Roboto Slab', serif;
+color: #000;
+}
+
+.slantimg{
+width:50% ;
+height:100%;
+box-sizing: border-box;
+background:url(images/18.jpeg) no-repeat;
+background-size:cover;
+
+}
+
+
+.tilt{
+position:absolute;
+top:370%;
+left:50%;
+transform:translate(-50%,-50%);
+height:400px;
+width:1200px;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+display:flex;
+}
+
+.tiltcontent{
+width:50%;
+height:100%;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+box-sizing: border-box;
+padding:30px 50px;
+font-family: 'Roboto Slab', serif;
+color:#000;
+}
+
+.tiltimg{
+width:50% ;
+height:100%;
+box-sizing: border-box;
+background:url(images/19.jpeg) no-repeat;
+background-size:cover;
+
+}
+
+.v{
+position:absolute;
+top:440%;
+left:50%;
+transform:translate(-50%,-50%);
+height:400px;
+width:1200px;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+display:flex;
+}
+
+.vcontent{
+width:50%;
+height:100%;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+box-sizing: border-box;
+padding:30px 50px;
+font-family: 'Roboto Slab', serif;
+color:#000;
+}
+
+.vimg{
+width:50% ;
+height:100%;
+box-sizing: border-box;
+background:url(images/20.jpeg) no-repeat;
+background-size:cover;
+
+}
+
+section.v1img{
+margin:0;
+paddding:0;
+background:url('images/p4.jpeg') no-repeat;
+background-size:cover;
+height:1300px;
+top:400%;
+padding-top:80px;
+}
+
+.secontent{
+position:absolute;
+left:50%;
+top:600%;
+}
+
+section.wrap{
+background:#000;
+width:82%;
+padding-left:20px;
+margin-left:65px;
+margin-right:60px;
+padding:50px;
+top:700%;
+left:100%;
+}
+
+.circle{
+position: relative;
+overflow:hidden;
+}
+.circle img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.circle.circle1{
+width:500px;
+height:500px;
+float:left;
+border-radius:50%;
+margin:10px;
+shape-outside:circle();
+}
+
+
+.circle.circle2{
+width:300px;
+height:300px;
+float:right;
+border-radius:50%;
+margin:20px;
+shape-outside:circle();
+}
+
+h2{
+color:#fff;
+font-size:2em;
+font-family: 'Roboto Slab', serif;
+margin-bottom:10px;
+}
+
+section.wrap p{
+color:#fff;
+font-family: 'Roboto Slab', serif;
+}
+
+
+footer {
+  text-align: center;
+  background-color:#000;
+  color: #fff;
+  padding: 20px;
+  position:relative;
+  bottom: -20;
+  width: 100%;
+  /* position: fixed;
+  z-index: 1; */
+}
+
+
+.footer-social-icons{
+width:100%;
+height:auto;
+margin:auto;
+}
+
+.footer-social-icons ul{
+margin: 0px;
+padding:0px;
+text-align:center;
+}
+
+.footer-social-icons ul li{
+display: inline-block;
+width:50px;
+height:50px;
+margin: 0px 10px;
+border-radius:100%;
+background:red;
+}
+
+.footer-social-icons ul li a{
+color: #272727;
+font-size:25px;
+}
+.footer-social-icons ul li a i{
+line-height:50px;
+}
+
+
+#sec2
+{
+left:30%;
+margin:0;
+padding:0;
+font-size:16px;
+color:#fff;
+font-family: 'Roboto Slab', serif;
+font-weight:300;
+}
+
+.sunset{
+background:url('images/13.jpeg') no-repeat;
+background-size:cover;
+background-position:center;
+width:100%;
+}
+
+form
+{
+padding-left:90px;
+position:relative;
+margin:5% auto;
+height:900px;
+width:600px;
+padding-top:20px;
+background:rgba(255, 255, 255,.4);
+box-shadow:0 25px 20px rgba(0,0,0,.2);
+}
+
+
+ 
+ 
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="radio"]
+  {
+	  display:block;
+	  box-sizing:border-box;
+	  margin-bottom:20px;
+	  margin-left:20px;
+	  padding:4px;
+	  width:450px;
+	  height:32px;
+	  border:none;
+	  border-radius:10px;
+	  border-radius:10px;
+	  outline:none;
+	  border-bottom:1px solid #aaa;
+	 font-family: 'Roboto Slab', serif;
+	  font-weight:400;
+	  font-size:15px;
+	  font-color:#fff;
+	  transition:0.2s ease;
+  }
+  
+ 
+  #seat{
+   display:block;
+	  box-sizing:border-box;
+	  margin-bottom:20px;
+	  margin-left:20px;
+	  padding:4px;
+	  width:450px;
+	  height:32px;
+	  border:none;
+	  border-radius:10px;
+	  border-radius:10px;
+	  outline:none;
+	  border-bottom:1px solid #aaa;
+      font-family: 'Roboto Slab', serif;
+	  font-weight:400;
+	  font-size:15px;
+	  transition:0.2s ease;
+  }
+   
+  
+  #entry
+  {
+	  margin-bottom:28px;
+	   margin-left:130px;
+	  width:120px;
+	  height:32px;
+	  background:#f44336;
+	  border:none;
+	  border-radius:20px;
+	  color:#fff;
+	 font-family: 'Roboto Slab', serif;
+	  font-weight:500;
+	  text-transform:uppercase;
+	  transition:0.2s ease;
+	  cursor:pointer;
+  }
+  #entry:hover,
+  #entry:focus
+  {
+	  background:#ff5722;
+	  transition:0.2s ease;
+	  boreder-radius:20px;
+  }
+  
+  
+  input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+  color: #fff;
+}
+
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.8em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+input[type=radio] + label:active:before {
+  transform: scale(0);
+}
+
+input[type=radio]:checked + label:before {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+  color: #fff;
+}
+
+
+
+
+
+table{
+font-family: 'Roboto Slab', serif;
+border-collapse:collapse;
+width:50%;
+margin: 50px auto;
+}
+
+table ,th , td  {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  font-size:20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+td{
+font-size:15px;
+color:#000;
+background-color:#fff;
+padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+</style>
+<script>
+  function myFunct() {
+  
+    var z = document.getElementById("first-name").value;
+    if (z == "")
+    {
+      alert("First-Name must be filled out");
+      return false;
+    }
+    var z = document.getElementById("last-name").value;
+    if (z == "")
+    {
+      alert("Last-Name must be filled out");
+      return false;
+    }
+    var zz = document.getElementById("mobileno").value;
+    if (zz == "")
+    {
+      alert("Phone Number should be filled");
+      return false;
+    }
+    y = parseInt(zz);
+    if(y>10000000000 || y <1000000000 || isNaN(zz))
+    {
+      alert("Enter a valid phone number");
+      return false;
+    }
+    var z = document.getElementById("email").value;
+    if (z == "")
+    {
+      alert("EMAIL must be filled out");
+      return false;
+    }
+    var n = z.includes("@");
+    if(n==false)
+    {
+      alert("Enter a valid Email address")
+      return false
+    }
+	
+   
+  
+   
+  
+   
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+	 var cell4= row.insertCell(3);
+    cell1.innerHTML = document.getElementById("first-name").value;
+	cell2.innerHTML = document.getElementById("last-name").value;
+    cell3.innerHTML = document.getElementById("email").value;
+	cell4.innerHTML = document.getElementById("mobileno").value;
+
+
+    
+  }
+  
+ 
+  </script>
+</head>
+
+<body>
+
+<header>
+
+
+
+<nav class="black">
+<div  class="logo">
+<img src="images/logo.jpeg">
+</div>
+
+<ul class="menu" id="menuResponsive">
+<li><a  class="active" href="#home">Home</a></li>
+<li><a href="#event-registration-form">Registration form</a></li>
+<li><a href="#myTable">Show registration</a></li>
+</ul>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(document.net).on('click','ul li',function(){
+    $(this).addClass('active').siblings().removeClass('active')
+})
+</script>
+<div class="title">
+<h1>"Where flowers bloom ,so does hope."</h1>
+</div>
+</header>
+<section class="sec1" id="home"></section>
+
+<section class="content1">
+<h1>Exotic flower junction</h1>
+<p> Watching flowers is one of the most delightful things. The flower show consists of different regional , 
+exoctic flowers such as <strong>Philadelphia Flower </strong>,<strong>Chelsea Flower </strong>
+<strong>Toronto Flower  </strong>,<strong>Tatton Park Flower </strong>,<strong>Flowering Rush 
+</strong>,<strong>Striped Bulb-Leaf Orchid </strong>etc.One will see many hilarious,historical,
+monumental etc decoration and models.Come and enjoy the captivating view</p></section>
+<br><br><br><br><br><br>
+<section class="sec2">
+<div class="maindiv"></section>
+<br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br><h1 class="show1">SHOWS</h1><br><br>
+
+
+
+<section class="v1img">
+<div class="slant">
+<div class="slantcontent">
+<h1>Dance</h1>
+<p><strong>Watch the fantabulous dance of stars and their crew live</strong>.
+This show includes different types of dances from parts of the country and 
+abroad and enjoy dancing along.Dance, the movement of the body in a rhythmic way,
+ usually to music and within a given space, for the purpose of expressing an idea 
+ or emotion, releasing energy, or simply taking delight in the movement itself. </p></div>
+<div class="slantimg"></div>
+</div><br>
+
+<div class="tilt">
+<div class="tiltcontent">
+<h1>Music</h1>
+<p>The nature of a concert varies by musical genre, individual performers, and the venue.
+ Concerts by a small jazz combo or small bluegrass band may have the same order of program,
+ mood, and volume—but vary in music and dress. In a similar way, a particular musician, band,
+ or genre of music might attract concert attendees with similar dress, hairstyle, and behavior. 
+ For example, concert goers in the 1960s often had long hair (sometimes in dread lock form), 
+ sandals and inexpensive clothing made of natural fibers. Regular attendees to a concert venue 
+ might also have a recognizable style that comprises that venue's scene. </p></div>
+<div class="tiltimg"></div>
+</div><br>
+
+<div class="v">
+<div class="vcontent">
+<h1>Art</h1>
+<p>
+The term live art refers to performances or events undertaken or staged by an artist or a group 
+of artists as a work of art, usually innovative and exploratory in nature.Live painting is a form 
+of visual performance art, in which artists complete a visual art piece in a public performance,
+ often at a bar, music concert, wedding reception, or public event, accompanied by a DJ or live music</p></div>
+<div class="vimg"></div>
+</div><br>
+</section>
+<br><br><br><br><br><br>
+
+<h1 class="wrap1">Stall & More about shows</h1><br><br>
+
+<section class="wrap">
+<div class="circle circle1">
+<img src="images/21.jpeg">
+</div>
+<div class="circle circle2">
+<img src="images/21.jpeg">
+</div>
+<div>
+<h2>Shows to die for</h2>
+<p>
+As the nation adjusts to the new reality of life under self-quarantine
+ in the midst of the coronavirus pandemic, a number of artists and musical
+ institutions are taking the show online to share some musical joy during these
+ trying times.With venues and bars on lock down across the country, there are plenty
+ of things you can watch from the safety of your couch, thanks to everyone from Miley 
+ Cyrus to the New York Metropolitan Opera and the fine folks at DisneyWith the passage
+ of time, sacred groves have become a rare sight. Here, at the Show, you will get to see
+ this wild beauty at close quarters. This is no doubt, a golden opportunity.Training in 
+ novel methods of flower arranging and hands-on training in bonsai cultivation will also 
+ be offered alongside the large collection of bonsai trees, orchids and other plants which 
+ will be displayed. </p>
+<h2>Tempting Food</h2>
+<p>Spoil yourself with 100+ varieties of delightful dishes and delectable desserts. The 25+
+ food stalls at IFF bring the best, most popular dishes from North, South, East and West India
+ to your platter.And oh, did we mention that more than half of the most popular food options are 
+ vegetarian and the dishes still taste like the best food on the planet!The Indian Food Festival 
+ is every foodie’s heaven! Come savor diverse cuisines and divine delicacies this summer!
+</p>
+</div>
+</section>
+<br><br>
+<h1>Register here</h1>
+
+<div class="sunset">
+<br>
+<div  class="event-registration" id="sec2">
+   <br>
+    
+    <form id="event-registration-form" method="POST" action="">
+      <!-- Form contents will go here -->
+     
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" placeholder="seeta"  maxlength="45" pattern="^[a-zA-Z]+((\s{1}[a-zA-Z]+)+|$)" required autofocus/>
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" placeholder="seeta"  maxlength="45" pattern="^[a-zA-Z]+((\s{1}[a-zA-Z]+)+|$)" required autofocus />
+        <label for="mobileno">Mobile Number</label>
+        <input type="text" id="mobileno" name="mobileno" placeholder="mobile_number" pattern="[0-9]{10}" required autofocus/>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seeta@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required autofocus/>
+		<br><br>
+        
+		<label id="option" for="seat" >Choose one :</label><br><br>
+	  <input type="radio" id="show" name="show" value="Flower show alongwith other shows" >
+  <label for="show">Flower show alongwith other shows</label><br>
+  <input type="radio" id="noshow" name="show" value="Just visit Flower show">
+  <label for="noshow">Just visit Flower show</label><br><br>
+  
+  <label for="seat">Choose a seat:</label><br><br>
+  <select name="seat" id="seat" >
+    <option value="Front stage">Front stage</option>
+    <option value="Middle">Middle</option>
+    <option value="Balcony">Balcony</option>
+    <option value="None">None</option>
+  </select><br>
+  
+ 
+  <label id="typeshow" for="shows">Choose shows :</label><br><br>
+  <input type="checkbox" id="music" name="music" value="music" >
+  <label for="music">Music</label>
+  <input type="checkbox" id="dance" name="dance" value="dance" >
+  <label for="dance">Dance</label>
+  <input type="checkbox" id="art" name="art" value="art" checked>
+  <label for="art">Live art</label>
+  <input type="checkbox" id="none" name="none" value="none">
+  <label for="none">None</label><br>
+ 
+     
+      
+  
+  <div class="container1">
+          <button type="button" id="entry" class = "btn btn-dark" onclick="myFunct();">SUBMIT</button>
+  </div>
+  </form>
+ </section>
+  
+<br><br>
+        
+      
+ <table id="myTable">
+		<tr>
+       <th>Email address:</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th>First name:</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <th>Last name:</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <th>Mobile number:</th>
+         </tr>
+ </table>
+
+<br><br>
+ </div>
+</div>
+<br><br><br><br><br><br>
+<footer>
+<div class="footer-social-icons">
+<ul>
+<li><a href="#" target="blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
+<li><a href="#" target="blank"><i class="fa fa-youtube"></i></a></li>
+</ul>
+</div>
+
+<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, Code-ready</p>
+</footer>
+
+
+
+ </body>
+ </html>
